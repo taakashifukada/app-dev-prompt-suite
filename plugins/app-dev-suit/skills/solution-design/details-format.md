@@ -1,3 +1,5 @@
+> Structural reference. Adapt headings to `config.documents.language`.
+
 # Solution Details Format
 
 ## test_cases.md

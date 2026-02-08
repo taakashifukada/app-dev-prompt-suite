@@ -1,3 +1,5 @@
+> Structural reference. Adapt headings to `config.documents.language`.
+
 # Quality Checklist: {phase}
 
 **Phase**: {phase}

@@ -1,10 +1,12 @@
+> Structural reference. Adapt headings to `config.documents.language`.
+
 # Feasibility Report Format (max 100 lines)
 
 ```markdown
 # Feasibility Report: {task-name}
 
 **Created:** {date}
-**Next step:** `/feasibility-study`
+**Next step:** `/app-dev-suit:solution-design -s <this-file>`
 
 ## Requirements
 
@@ -38,5 +40,6 @@
 ## Next Actions
 
 1. Review this feasibility report
-2. Run `/solution-design` to proceed
+2. Run the following command to proceed:
+   `/app-dev-suit:solution-design -s {actual-output-path}`
 ```

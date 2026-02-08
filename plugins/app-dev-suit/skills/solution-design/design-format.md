@@ -1,3 +1,5 @@
+> Structural reference. Adapt headings to `config.documents.language`.
+
 ````markdown
 # Solution Design Format (max 100 lines)
 
@@ -5,7 +7,7 @@
 
 **Based on:** `{path-to-feasibility-report}`
 **Created:** {date}
-**Next step:** `/implement-tdd -s <this-file>`
+**Next step:** `/app-dev-suit:implement-tdd -s <this-file>`
 
 ## Requirements
 
@@ -58,5 +60,6 @@ graph LR
 ## Next Actions
 
 1. Review this solution design
-2. Run `/implement-tdd` to proceed
+2. Run the following command to proceed:
+   `/app-dev-suit:implement-tdd -s {actual-output-path}`
 ````

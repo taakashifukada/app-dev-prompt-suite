@@ -39,13 +39,10 @@ TaskCreate: `Solution Design: <task-name>`
 AskUserQuestion: approve / modify
 
 ### 7. Deep Codebase Investigation (parallel)
-- Task 1 (Explore): Target file detailed analysis
-- Task 2 (Explore): Test target analysis
-- Task 3 (Explore): Dependency component analysis
+Read [codebase investigation instructions](steps/codebase-investigation.md) and execute.
 
 ### 8. Subtask Breakdown
-- Split into subtasks with Mermaid precedence diagram
-- Update metrics: subtask_count, dependency_depth
+Read [subtask breakdown instructions](steps/subtask-breakdown.md) and execute.
 
 ### 9. Solution Design Document
 Save hierarchical docs:
@@ -59,14 +56,7 @@ Save hierarchical docs:
 Use document-summarizer agent to summarize and display to user.
 
 ### 11. Approval Loop
-AskUserQuestion: approve / request changes
-
-**Additional investigation path:**
-1. AskUserQuestion for focus area
-2. Run appropriate agents
-3. Update design document (with document update confirmation)
-4. Update metrics: review_rounds
-5. Return to step 11
+Read [approval loop instructions](steps/approval-loop.md) and execute.
 
 ### 12. Quality Gate
 - Create solution_design checklist (via quality-gate skill)
@@ -76,7 +66,13 @@ AskUserQuestion: approve / request changes
 - Save metrics report; display summary
 - TaskUpdate: mark completed
 - TaskCreate: `TDD Implementation: <task-name>`
+- Display next phase command:
+  ```
+  Next: /app-dev-suit:implement-tdd -s {path-to-solution-design}
+  ```
+- AskUserQuestion: proceed to next phase? (Yes: copy and run the command above / No: run later / Type Anything)
 
 ## Constraints
 
 - Docs dir: `config.documents.output_dir` (default: `.claude/claudeRes/docs`)
+- Document language: `config.documents.language` (see [conventions](../../conventions.md))

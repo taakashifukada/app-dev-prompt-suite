@@ -1,3 +1,5 @@
+> Structural reference. Adapt headings to `config.documents.language`.
+
 # Feasibility Details Format
 
 ## codebase_analysis.md

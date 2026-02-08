@@ -34,3 +34,4 @@ Implement the feature spec at `config.feature_spec.path` (default: `.claude/clau
 - DRY: reuse existing code
 - If TDD is overkill: inform user, get approval, then use simpler approach
 - For complex unknowns: delegate to poc-feasibility-expert agent
+- Document language: `config.documents.language` (see [conventions](../../conventions.md))
