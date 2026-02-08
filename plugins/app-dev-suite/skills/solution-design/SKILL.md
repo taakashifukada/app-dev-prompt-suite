@@ -13,6 +13,7 @@ Create a detailed solution design for TDD implementation based on the feasibilit
 
 ### 0. Initialization
 - Load config: see [conventions](../../conventions.md)
+- Check for `progress.yaml` in output_dir; if found: AskUserQuestion — resume / start fresh / Type Anything
 - Load or create metrics tracker
 
 ### 1. Source Report
@@ -60,10 +61,13 @@ Read [approval loop instructions](steps/approval-loop.md) and execute.
 
 ### 12. Quality Gate
 - Create solution_design checklist (via quality-gate skill)
-- Display for user approval; evaluate gate
+- Attach evidence: subtask list, test case names, file change paths
+- Present checklist with evidence to user
+- AskUserQuestion — gate decision: Pass / Warn / Block / Type Anything
 
 ### 13. Metrics & Completion
 - Save metrics report; display summary
+- Update `progress.yaml`: set solution_design to completed, record output path
 - TaskUpdate: mark completed
 - TaskCreate: `TDD Implementation: <task-name>`
 - Display next phase command:

@@ -16,6 +16,7 @@ For each subtask (in dependency order):
 
 - Delegate to tdd-implementer agent with the detailed design
 - TDD cycle: Red → Green → Refactor
+- Capture test runner output (exit code + summary) after Green phase
 - Update metrics: `files_changed`
 
 ## c. Subtask Retrospective

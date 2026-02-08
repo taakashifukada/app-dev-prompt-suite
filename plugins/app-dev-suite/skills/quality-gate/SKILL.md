@@ -35,6 +35,21 @@ For checklist template, see [quality-checklist-template.md](quality-checklist-te
 - Documentation updated where needed
 - Implementation report includes PR description
 
+## Evidence-Based Metrics
+
+Metrics must include verifiable evidence. Metrics without evidence → automatically Warn.
+If test runner is unavailable → record "manual review" and escalate to user.
+
+| Metric | Evidence Required |
+|--------|-------------------|
+| files_analyzed | List actual file paths in checklist |
+| test_coverage | Run test coverage command, capture output |
+| tests_passing | Run test command, capture exit code and summary |
+| files_changed | Run `git diff --stat`, capture output |
+| tests_added | List new test file paths and test function names |
+| web_research_count | List URLs consulted |
+| solution_candidates | List candidate names from report |
+
 ## Metrics Tracker
 
 Initialize at start of a task, update during each phase, save at completion.
@@ -52,11 +67,10 @@ Track metrics incrementally during each phase. Record start/completion timestamp
 
 ## Quality Gate Decision
 
-At each phase boundary, evaluate pass/warn/block:
-
-**Pass**: All required checklist items passed AND no threshold violations
-**Warn**: Optional items failed OR metrics below recommended but above minimum
-**Block**: Required items failed OR critical thresholds violated
+At each phase boundary, present evidence and let user decide:
+1. Collect evidence (execute commands where possible)
+2. Present evidence summary with threshold comparison
+3. AskUserQuestion — gate decision: Pass / Warn / Block / Type Anything
 
 **Thresholds** (from `config.quality.thresholds`):
 - Feasibility: `min_files_analyzed` (default 10), `min_solution_candidates` (default 2)

@@ -40,6 +40,12 @@ Changes Summary:
 
 Only update after user approval.
 
+## Phase Progress Tracking
+
+On skill completion: save `{docs_dir}/{task_name}/progress.yaml` with task_name, current_phase, and per-phase status/output/completed_at.
+
+On skill startup: if `progress.yaml` exists in output_dir, AskUserQuestion — resume / start fresh / Type Anything.
+
 ## Issue Handling
 
 When discovering issues during any phase:

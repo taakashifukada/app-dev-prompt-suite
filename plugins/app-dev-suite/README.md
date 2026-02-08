@@ -45,12 +45,12 @@ Each phase produces structured documents (summary + hierarchical details) that s
 
 | | Plan Mode | app-dev-suite |
 |---|---|---|
-| **Artifacts** | Single `plan.md` | Hierarchical docs per phase (report, details, alternatives, PoC results) |
-| **Decision records** | Conversation log only | `alternatives.md` with comparison matrix and selection rationale |
-| **Quality control** | None | Quality gates with Pass/Warn/Block at phase boundaries |
-| **Checkpoints** | 1 (plan approval) | 2+ (phase transitions + in-phase approvals) |
-| **Output format** | Free-form, varies each run | Fixed templates for consistent, reviewable output |
-| **Context management** | Subagent separation only | 100-line summaries + detail files for efficient phase-to-phase handoff |
+| **ワークフロー** | ユーザが都度設計 | 3フェーズ+品質ゲートが事前構築済み |
+| **成果物の永続性** | 会話内で完結しがち | フェーズごとにファイル生成、セッション跨ぎで再開可能 |
+| **意思決定記録** | 明示的に指示しない限り残らない | alternatives.mdへの記録がワークフローに組み込み済み |
+| **品質チェック** | なし | フェーズ境界でエビデンス付き品質ゲート |
+| **出力の一貫性** | 実行ごとに異なる | テンプレートで構造を統一、多言語対応 |
+| **専門エージェント** | 汎用サブエージェントのみ | TDD/PoC/調査/要約の4専門エージェント |
 
 **Best fit**: Projects requiring explainability — why this design was chosen, what alternatives were considered, and what quality criteria were met. Ideal when development decisions need to be reviewed by team members or stakeholders.
 

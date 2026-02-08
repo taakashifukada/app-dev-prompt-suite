@@ -13,6 +13,7 @@ Implement the solution design using TDD (Red-Green-Refactor).
 
 ### 0. Initialization
 - Load config: see [conventions](../../conventions.md)
+- Check for `progress.yaml` in output_dir; if found: AskUserQuestion — resume / start fresh / Type Anything
 - Load metrics tracker
 
 ### 1. Source Design
@@ -37,9 +38,10 @@ Propose branch name and base; create or wait for user to create. Checkout.
 Read [subtask loop instructions](steps/subtask-loop.md) and execute for each subtask in dependency order.
 
 ### 7. Integration Verification
-- Run all tests; confirm passing
-- Run integration tests
+- Run all tests; capture full output (exit code + summary)
+- Run integration tests; capture full output
 - Update metrics: `tests_added`
+- Retain test outputs as evidence for quality gate (`tests_passing`, `test_coverage`)
 
 ### 8. Implementation Report
 Save to `{docs_dir}/{task_name}/implementation_report.md`:
@@ -50,10 +52,13 @@ Save to `{docs_dir}/{task_name}/implementation_report.md`:
 
 ### 9. Quality Gate
 - Create implementation checklist (via quality-gate skill)
-- Display for user approval; evaluate gate
+- Attach evidence: test runner output from Step 7, `git diff --stat` output
+- Present checklist with evidence to user
+- AskUserQuestion — gate decision: Pass / Warn / Block / Type Anything
 
 ### 10. Metrics & Completion
 - Save metrics report; display summary
+- Update `progress.yaml`: set implementation to completed, record output path
 - TaskUpdate: mark completed
 
 ## Constraints

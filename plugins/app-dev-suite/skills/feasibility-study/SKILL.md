@@ -13,6 +13,7 @@ Conduct a feasibility study based on the spec at `config.feature_spec.path` (def
 
 ### 0. Initialization
 - Load config: see [conventions](../../conventions.md)
+- Check for `progress.yaml` in output_dir; if found: AskUserQuestion — resume / start fresh / Type Anything
 - Initialize metrics tracker for this task
 
 ### 1. Task Name and Output Path
@@ -50,15 +51,17 @@ Save hierarchical docs:
 
 ### 9. Quality Gate
 - Create feasibility_study checklist (via quality-gate skill)
-- Display for user approval
-- Evaluate gate: pass/warn/block based on thresholds
-- Block → fix issues first; Warn → confirm with user
+- Attach evidence: analyzed file paths, URLs consulted, candidate names
+- Present checklist with evidence to user
+- AskUserQuestion — gate decision: Pass / Warn / Block / Type Anything
+- Block → fix issues; Warn → record concerns, proceed
 
 ### 10. Metrics & Completion
 - Record completion timestamp and save metrics report
 - Display metrics summary
 - TaskUpdate: mark completed
 - TaskCreate: `Solution Design: <task-name>` as next step
+- Update `progress.yaml`: set feasibility_study to completed, record output path
 - Display next phase command:
   ```
   Next: /app-dev-suite:solution-design -s {path-to-feasibility-report}

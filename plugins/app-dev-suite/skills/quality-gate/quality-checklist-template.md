@@ -24,9 +24,9 @@
 
 ## Metrics
 
-| Metric | Actual | Threshold | Status |
-|--------|--------|-----------|--------|
-| {metric_1} | {value} | {threshold} | {pass/fail} |
+| Metric | Actual | Threshold | Evidence | Status |
+|--------|--------|-----------|----------|--------|
+| {metric_1} | {value} | {threshold} | {file list / command output} | {pass/fail} |
 
 ## Phase-Specific Checks
 
@@ -50,9 +50,8 @@
 - [ ] Documentation updated
 - [ ] PR description prepared
 
-## Sign-off
+## Gate Decision
 
-- [ ] All items verified and validated
-- [ ] Ready to proceed to next phase
+AskUserQuestion: Pass / Warn / Block / Type Anything
 
 **Note**: Select only the relevant phase-specific section for the current phase.
