@@ -80,6 +80,9 @@ agents:
   # Agent for document summarization
   document_summarizer: "document-summarizer"
 
+  # Agent for quality gate evaluation at phase boundaries
+  quality_gate_evaluator: "quality-gate-evaluator"
+
   # Agent for codebase exploration (Tier 1: Parallel Investigation)
   explore: "Explore"
 

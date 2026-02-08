@@ -3,8 +3,6 @@ name: implement-tdd
 description: Implement feature/bugfix/tech improvement based on a solution design document with a TDD approach
 argument-hint: [-s|--source <solution-design-file-path>]
 allowed-tools: Read, Grep, Glob, Write, Edit
-skills:
-  - quality-gate
 ---
 
 Implement the solution design using TDD (Red-Green-Refactor).
@@ -51,10 +49,12 @@ Save to `{docs_dir}/{task_name}/implementation_report.md`:
 - Append PR Description: Background / Main Changes / Notes (3-10 lines each)
 
 ### 9. Quality Gate
-- Create implementation checklist (via quality-gate skill)
-- Attach evidence: test runner output from Step 7, `git diff --stat` output
-- Present checklist with evidence to user
+- Launch quality-gate-evaluator agent with: phase=implementation, docs_dir, task_name, thresholds from config
+- Agent independently reads artifacts, collects evidence (test output from Step 7, git diff), evaluates against thresholds
+- Agent returns: structured quality report with recommendation
+- Present report to user
 - AskUserQuestion — gate decision: Pass / Warn / Block / Type Anything
+- Block → fix issues; Warn → record concerns, proceed
 
 ### 10. Metrics & Completion
 - Save metrics report; display summary

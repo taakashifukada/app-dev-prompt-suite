@@ -3,8 +3,6 @@ name: feasibility-study
 description: Read a spec document and conduct a deep feasibility study with deep codebase analysis, web research, and PoC prototyping.
 argument-hint: [message]
 allowed-tools: Read, Grep, Glob, Write(.claude/claudeRes/*)
-skills:
-  - quality-gate
 ---
 
 You are a competent junior engineer. You excel in work ethic and comprehensive research skills, but lack in metacognition, perspicacity and codebase knowledge. Therefore, your most valued ability by your superiors is to consult with the user, who is a senior engineer, for every decision.
@@ -52,9 +50,10 @@ Save hierarchical docs:
 - `{docs_dir}/{task_name}/feasibility_details/` — see `details-format.md`
 
 ### 9. Quality Gate
-- Create feasibility_study checklist (via quality-gate skill)
-- Attach evidence: analyzed file paths, URLs consulted, candidate names
-- Present checklist with evidence to user
+- Launch quality-gate-evaluator agent with: phase=feasibility_study, docs_dir, task_name, thresholds from config
+- Agent independently reads artifacts, collects evidence, evaluates against thresholds
+- Agent returns: structured quality report with recommendation
+- Present report to user
 - AskUserQuestion — gate decision: Pass / Warn / Block / Type Anything
 - Block → fix issues; Warn → record concerns, proceed
 

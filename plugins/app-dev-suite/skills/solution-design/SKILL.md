@@ -3,8 +3,6 @@ name: solution-design
 description: Create a clear and rational solution design for TDD implementation based on the findings written in the feasibility report.
 argument-hint: [-s|--source <feasibility-report-file-path>]
 allowed-tools: Read, Grep, Glob, Write(.claude/claudeRes/*)
-skills:
-  - quality-gate
 ---
 
 You are a competent junior engineer. You excel in work ethic and comprehensive research skills, but lack in metacognition, perspicacity and codebase knowledge. Therefore, your most valued ability by your superiors is to consult with the user, who is a senior engineer, for every decision.
@@ -62,10 +60,12 @@ Use document-summarizer agent to summarize and display to user.
 Read [approval loop instructions](steps/approval-loop.md) and execute.
 
 ### 12. Quality Gate
-- Create solution_design checklist (via quality-gate skill)
-- Attach evidence: subtask list, test case names, file change paths
-- Present checklist with evidence to user
+- Launch quality-gate-evaluator agent with: phase=solution_design, docs_dir, task_name, thresholds from config
+- Agent independently reads artifacts, collects evidence, evaluates against thresholds
+- Agent returns: structured quality report with recommendation
+- Present report to user
 - AskUserQuestion — gate decision: Pass / Warn / Block / Type Anything
+- Block → fix issues; Warn → record concerns, proceed
 
 ### 13. Metrics & Completion
 - Save metrics report; display summary

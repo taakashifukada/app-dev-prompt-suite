@@ -41,6 +41,7 @@ agents:
   tdd_implementer: "tdd-implementer"
   web_researcher: "web-research-expert"
   document_summarizer: "document-summarizer"
+  quality_gate_evaluator: "quality-gate-evaluator"
   explore: "Explore"
 
 quality:
