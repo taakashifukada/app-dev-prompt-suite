@@ -83,6 +83,9 @@ agents:
   # Agent for quality gate evaluation at phase boundaries
   quality_gate_evaluator: "quality-gate-evaluator"
 
+  # Agent for deep codebase investigation (3-phase iterative exploration)
+  codebase_investigator: "codebase-investigator"
+
   # Agent for codebase exploration (Tier 1: Parallel Investigation)
   explore: "Explore"
 

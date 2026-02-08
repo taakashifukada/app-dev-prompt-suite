@@ -42,6 +42,7 @@ agents:
   web_researcher: "web-research-expert"
   document_summarizer: "document-summarizer"
   quality_gate_evaluator: "quality-gate-evaluator"
+  codebase_investigator: "codebase-investigator"
   explore: "Explore"
 
 quality:
