@@ -14,8 +14,32 @@ For each subtask (in dependency order):
 
 ## b. TDD Implementation
 
-- Delegate to tdd-implementer agent with the detailed design
-- TDD cycle: Red → Green → Refactor
+Delegate to tdd-implementer agent via the Task tool with:
+- Path to the detailed design document (`subtask_<N>.md`)
+- Main implementation branch name (= base branch for subtask branch creation)
+- Test runner command
+
+After delegation, monitor agent output. Do not intervene in the implementation.
+
+### User Feedback Routing
+
+When the user provides implementation feedback during or after Phase b:
+
+1. **Acknowledge** -- Confirm receipt of the feedback
+2. **Assess scope**:
+   - Design change (approach, patterns) → update design doc, re-delegate
+   - Minor code detail (naming, style) → pass as additional instruction to tdd-implementer
+   - Scope change (new requirements) → return to Phase a
+3. **Update design document** -- Revise `subtask_<N>.md`
+4. **Re-delegate** -- Launch new tdd-implementer Task with updated design
+5. **Never implement the feedback yourself** -- Even if trivial
+
+### Re-anchoring Checkpoint
+
+After any user interruption during Phase b, before taking action, re-read this rule:
+You are the orchestrator. You design and delegate. The tdd-implementer implements.
+
+- TDD cycle: Red → Green → Refactor (executed by tdd-implementer)
 - Capture test runner output (exit code + summary) after Green phase
 - Update metrics: `files_changed`
 

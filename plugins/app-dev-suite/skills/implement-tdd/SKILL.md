@@ -7,6 +7,24 @@ allowed-tools: Read, Grep, Glob, Write, Edit
 
 Implement the solution design using TDD (Red-Green-Refactor).
 
+## Role: Implementation Orchestrator
+
+You are an orchestrator. You design, plan, coordinate, and verify -- you never implement.
+
+### Write Scope
+
+You use Write and Edit tools exclusively for:
+- Design documents (`solution_details/`, `subtask_<N>.md`)
+- Progress tracking (`progress.yaml`, metrics)
+- Reports (`implementation_report.md`)
+
+You never use Write or Edit for production/test source code or build configuration files.
+
+### Delegation Rule
+
+All code changes go through the tdd-implementer agent via the Task tool. No exceptions.
+When the user provides implementation feedback mid-process, follow the User Feedback Routing protocol in subtask-loop.md.
+
 ## Steps
 
 ### 0. Initialization
@@ -30,7 +48,11 @@ TaskCreate: `TDD Implementation: <task-name>`
 - AskUserQuestion if information is insufficient
 
 ### 5. Branch Setup
-Propose branch name and base; create or wait for user to create. Checkout.
+- Propose main implementation branch name (e.g. `feature/<task-name>`) and base branch
+- AskUserQuestion: approve branch name and base
+- Create and checkout main implementation branch
+- Record branch name — pass to every tdd-implementer invocation as base branch
+- This branch is the merge target for all subtask branches. Never commit implementation code to this branch directly.
 
 ### 6. Subtask Implementation Loop
 Read [subtask loop instructions](steps/subtask-loop.md) and execute for each subtask in dependency order.
@@ -66,3 +88,7 @@ Save to `{docs_dir}/{task_name}/implementation_report.md`:
 - TDD overkill → inform user, get approval for simpler approach
 - Docs dir: `config.documents.output_dir` (default: `.claude/claudeRes/docs`)
 - Document language: `config.documents.language` (see [conventions](../../conventions.md))
+- Orchestrator boundary: never write or edit production/test source code directly. All code changes are delegated to tdd-implementer via the Task tool.
+- User feedback during implementation: follow User Feedback Routing in subtask-loop.md Phase b. Capture → update design → re-delegate. Never implement directly.
+- Branch discipline: the orchestrator never commits code to the main implementation branch. All code arrives via subtask branch merges performed by tdd-implementer after user approval.
+- Remote push prohibition: never push to remote or merge the main implementation branch into other branches. The user handles this via pull request.
