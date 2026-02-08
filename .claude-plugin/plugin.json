@@ -2,6 +2,7 @@
   "name": "app-dev-suit",
   "description": "Three-phase spec-driven development workflow: feasibility study → solution design → TDD implementation",
   "version": "1.0.0",
-  "author": { "name": "tk_who" },
+  "author": { "name": "Takashi Fukada" },
+  "repository": "https://github.com/Takashi Fukada/app-dev-suite",
   "license": "MIT"
 }

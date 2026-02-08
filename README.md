@@ -4,12 +4,20 @@ A Claude Code plugin providing a three-phase spec-driven development workflow: f
 
 ## Installation
 
-```bash
-# From local directory
-claude --plugin-dir ./app-dev-suit-plugin
+### Via Marketplace (Recommended)
 
-# Or install via plugin command
-/plugin install app-dev-suit
+```bash
+# Add marketplace
+/plugin marketplace add "Takashi Fukada/app-dev-suite"
+
+# Install plugin
+/plugin install app-dev-suit@app-dev-suite
+```
+
+### From Local Directory
+
+```bash
+claude --plugin-dir ./app-dev-suit-plugin
 ```
 
 After installation, skills are accessible with the `app-dev-suit:` namespace prefix:
@@ -111,7 +119,8 @@ Install both plugins to combine generic workflow with project-specific capabilit
 ```
 app-dev-suit/
 ├── .claude-plugin/
-│   └── plugin.json
+│   ├── plugin.json
+│   └── marketplace.json
 ├── skills/
 │   ├── feasibility-study/
 │   │   ├── SKILL.md
