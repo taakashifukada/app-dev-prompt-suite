@@ -41,18 +41,27 @@ app-dev-suite is a structured development workflow plugin for teams that need **
 
 Each phase produces structured documents (summary + hierarchical details) that serve as audit trails and team-shareable artifacts.
 
+### Design Philosophy
+
+app-dev-suite is built for **spec-driven implementation on enterprise-scale codebases** — where process transparency, correctability at key decision points, and output consistency matter.
+
+- **Process transparency**: Every phase produces structured, reviewable artifacts with decision rationale
+- **Correctability**: User-driven quality gates at phase boundaries let teams course-correct before work compounds
+- **Output consistency**: Templates ensure uniform document structure regardless of session or model variance
+- **Sonnet-optimized**: Workflow and prompts are designed to produce reliable results with Claude Sonnet, keeping Opus optional for deep analysis
+
 ### Why app-dev-suite over Plan Mode?
 
 | | Plan Mode | app-dev-suite |
 |---|---|---|
-| **ワークフロー** | ユーザが都度設計 | 3フェーズ+品質ゲートが事前構築済み |
-| **成果物の永続性** | 会話内で完結しがち | フェーズごとにファイル生成、セッション跨ぎで再開可能 |
-| **意思決定記録** | 明示的に指示しない限り残らない | alternatives.mdへの記録がワークフローに組み込み済み |
-| **品質チェック** | なし | フェーズ境界でエビデンス付き品質ゲート |
-| **出力の一貫性** | 実行ごとに異なる | テンプレートで構造を統一、多言語対応 |
-| **専門エージェント** | 汎用サブエージェントのみ | TDD/PoC/調査/要約の4専門エージェント |
+| **Workflow** | User designs ad-hoc each time | Pre-built 3-phase + quality gates |
+| **Artifact persistence** | Confined to conversation | File output per phase, resumable across sessions |
+| **Decision records** | Not retained unless explicitly instructed | Built into workflow via alternatives.md |
+| **Quality checks** | None | Evidence-based quality gates at phase boundaries |
+| **Output consistency** | Varies per run | Unified structure via templates, multi-language support |
+| **Specialized agents** | General-purpose subagents only | 4 dedicated agents: TDD / PoC / research / summarization |
 
-**Best fit**: Projects requiring explainability — why this design was chosen, what alternatives were considered, and what quality criteria were met. Ideal when development decisions need to be reviewed by team members or stakeholders.
+**Best fit**: Teams working on large codebases where development decisions need to be reviewed by stakeholders — why this design was chosen, what alternatives were considered, and what quality criteria were met.
 
 For quick individual tasks, Plan Mode or `/app-dev-suite:small-feature` remains the simpler choice.
 
