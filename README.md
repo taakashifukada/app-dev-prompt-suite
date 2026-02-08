@@ -8,10 +8,10 @@ A Claude Code plugin providing a three-phase spec-driven development workflow: f
 
 ```bash
 # Add marketplace
-/plugin marketplace add taakashifukada/app-dev-suite
+/plugin marketplace add taakashifukada/app-dev-prompt-suite
 
 # Install plugin
-/plugin install app-dev-suit@app-dev-suite
+/plugin install app-dev-suit@app-dev-prompt-suite
 ```
 
 ### From Local Directory
