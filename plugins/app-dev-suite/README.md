@@ -25,7 +25,6 @@ After installation, skills are accessible with the `app-dev-suite:` namespace pr
 /app-dev-suite:feasibility-study
 /app-dev-suite:solution-design
 /app-dev-suite:implement-tdd
-/app-dev-suite:setup-wizard
 /app-dev-suite:small-feature
 /app-dev-suite:generate-slides
 ```
@@ -68,15 +67,6 @@ For quick individual tasks, Plan Mode or `/app-dev-suite:small-feature` remains 
 
 ## Quick Start
 
-### First-Time Setup
-
-Run the interactive setup wizard:
-```
-/app-dev-suite:setup-wizard
-```
-
-Initializes project directories (`.claude/claudeRes/docs`, `.claude/claudeRes/scripts`) and confirms language preference.
-
 ### Basic Usage (No Configuration Required)
 
 ```
@@ -99,7 +89,6 @@ For smaller tasks that don't need the full three-phase workflow:
 | `feasibility-study` | Codebase analysis, web research, solution candidates, PoC |
 | `solution-design` | Subtask breakdown, test cases, precedence diagram |
 | `implement-tdd` | TDD implementation per subtask |
-| `setup-wizard` | Interactive directory setup wizard |
 | `small-feature` | All-in-one quick implementation with TDD |
 | `generate-slides` | Marp presentation slides from phase artifacts |
 
@@ -158,8 +147,6 @@ app-dev-prompt-suite/                    # Marketplace repository
         │   │   ├── SKILL.md
         │   │   ├── scaling-strategies.md
         │   │   └── steps/
-        │   ├── setup-wizard/
-        │   │   └── SKILL.md
         │   ├── small-feature/
         │   │   └── SKILL.md
         │   └── generate-slides/

@@ -14,7 +14,6 @@ You are an orchestrator. You design, plan, coordinate, and verify -- you never i
 ### Write Scope
 
 You use Write and Edit tools exclusively for:
-- Progress tracking (`progress.yaml`)
 - Reports (`implementation_report.md`)
 
 You never use Write or Edit for production/test source code or build configuration files.
@@ -28,7 +27,6 @@ When the user provides implementation feedback mid-process, follow the User Feed
 
 ### 0. Init
 - Read [conventions](../../conventions.md) for defaults
-- Check for `progress.yaml` in docs_dir; if found: AskUserQuestion — resume / start fresh / Type Anything
 - Parse `-s|--source <path>` from arguments
 - If not specified: Glob for `**/*solution_design*.md` in docs_dir, sort by mtime, present candidates
 - TaskList: find `Solution Design: <task-name>`, mark completed
@@ -56,7 +54,6 @@ Read [subtask loop instructions](steps/subtask-loop.md) and execute for each sub
   - Append PR Description: Background / Main Changes / Notes (3-10 lines each)
 
 ### 4. Complete
-- Update `progress.yaml`: set implementation to completed, record output path
 - TaskUpdate: mark completed
 
 ## Constraints

@@ -15,7 +15,6 @@ Create a detailed solution design for TDD implementation based on the feasibilit
 
 ### 0. Init
 - Read [conventions](../../conventions.md) for defaults
-- Check for `progress.yaml` in docs_dir; if found: AskUserQuestion — resume / start fresh / Type Anything
 - Parse `-s|--source <path>` from arguments
 - If not specified: Glob for `**/*feasibility_report*.md` in docs_dir, sort by mtime, present candidates to user
 - TaskList: find `Feasibility Study: <task-name>`, mark completed
@@ -43,7 +42,6 @@ AskUserQuestion: approve / modify
   - Additional investigation → run appropriate agents (Explore / web-research-expert / Read+Grep), update design, re-display
 
 ### 5. Complete
-- Update `progress.yaml`: set solution_design to completed, record output path
 - TaskUpdate: mark completed
 - TaskCreate: `TDD Implementation: <task-name>`
 - Display next phase command:

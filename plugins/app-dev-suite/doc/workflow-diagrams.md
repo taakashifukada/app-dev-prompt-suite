@@ -62,7 +62,7 @@ flowchart TD
     AddResearch --> Select
 
     Report["4. 最終レポート作成\nfeasibility/feasibility_report.md"]
-    Report --> Complete["5. タスク完了\nprogress.yaml 更新"]
+    Report --> Complete["5. タスク完了"]
 
     style Start fill:#2196F3,color:#fff
     style Investigate fill:#e3f2fd
@@ -95,7 +95,7 @@ flowchart TD
     end
     Approve2 -- "追加検討" --> AddStudy["追加調査\n+ ドキュメント更新"]
     AddStudy --> Approve2
-    Approve2 -- "承認" --> Complete["5. タスク完了\nprogress.yaml 更新"]
+    Approve2 -- "承認" --> Complete["5. タスク完了"]
 
     style Start fill:#FF9800,color:#fff
     style DeepInvestigate fill:#fff3e0
@@ -125,7 +125,7 @@ flowchart TD
 
     Retro --> LoopStart
     LoopStart -- "全完了" --> VerifyReport["3. 統合テスト実行\n+ 実装レポート作成\n+ PR Description"]
-    VerifyReport --> Complete["4. タスク完了\nprogress.yaml 更新"]
+    VerifyReport --> Complete["4. タスク完了"]
 
     style Start fill:#4CAF50,color:#fff
     style SubtaskLoop fill:#e8f5e9
@@ -140,7 +140,6 @@ flowchart LR
         FS["/feasibility-study"]
         SD["/solution-design"]
         IT["/implement-tdd"]
-        SW["/setup-wizard"]
         SF["/small-feature"]
         GS["/generate-slides"]
     end

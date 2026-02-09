@@ -15,7 +15,6 @@ Conduct a feasibility study based on the spec at `.claude/claudeRes/scripts/feat
 
 ### 0. Init
 - Read [conventions](../../conventions.md) for defaults
-- Check for `progress.yaml` in docs_dir; if found: AskUserQuestion — resume / start fresh / Type Anything
 - AskUserQuestion for task_name
 - Set output path: `{docs_dir}/{task_name}/feasibility
 - TaskCreate: `Feasibility Study: <task-name>`
@@ -41,7 +40,6 @@ Read [approach selection instructions](steps/approach-selection.md) and execute.
 - Display the summary to the terminal
 
 ### 6. Complete
-- Update `progress.yaml`: set feasibility_study to completed, record output path
 - TaskUpdate: mark completed
 - TaskCreate: `Solution Design: <task-name>` as next step
 - Display next phase command:

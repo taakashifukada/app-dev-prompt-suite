@@ -16,10 +16,9 @@ Generate Marp presentation slides from app-dev-suite phase artifacts.
 
 ### 1. Resolve Source Directory
 - Parse `-s <path>` from arguments
-- If not specified: Glob `.claude/claudeRes/docs/*/progress.yaml`, sort by mtime
-  - If multiple found: AskUserQuestion to select task directory
-  - If one found: use it
-  - If none found: AskUserQuestion for manual path / Type Anything
+- If not specified: AskUserQuestion for task name / Type Anything
+- Set source dir: `.claude/claudeRes/docs/{task_name}`
+- If dir not found: AskUserQuestion for manual path / Type Anything
 
 ### 2. Detect Phases
 - Parse `-p` from arguments (values: `all`, `feasibility`, `design`, `implementation`; comma-separated for multiple)
