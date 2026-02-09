@@ -4,8 +4,8 @@
 
 | Setting | Value |
 |---|---|
-| docs_dir | `.claude/claudeRes/docs` |
-| feature_spec_path | `.claude/claudeRes/scripts/feature_spec.md` |
+| docs_dir | `.claude/claudeRes/docs`(`.claude` is project-level one.) |
+| feature_spec_path | `.claude/claudeRes/scripts/feature_spec.md`(`.claude` is project-level one.)  |
 | language | `"auto"` — detect from feature spec. If undetectable, use user message language. |
 
 To customize: edit this table directly.
