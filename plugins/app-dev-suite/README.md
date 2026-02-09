@@ -40,7 +40,7 @@ app-dev-suite is a structured development workflow plugin for teams that need **
 2. **Solution Design** — Subtask breakdown, dependency mapping, test case planning
 3. **TDD Implementation** — Test-driven development with per-subtask verification
 
-Each phase produces structured documents (summary + hierarchical details) that serve as audit trails and team-shareable artifacts.
+Each phase produces a structured document that serves as an audit trail and team-shareable artifact.
 
 ### Design Philosophy
 
@@ -57,7 +57,7 @@ app-dev-suite is built for **spec-driven implementation on enterprise-scale code
 |---|---|---|
 | **Workflow** | User designs ad-hoc each time | Pre-built 3-phase with user approval gates |
 | **Artifact persistence** | Confined to conversation | File output per phase, resumable across sessions |
-| **Decision records** | Not retained unless explicitly instructed | Built into workflow via alternatives.md |
+| **Decision records** | Not retained unless explicitly instructed | Built into workflow via feasibility report |
 | **Correctability** | None | User approval at every key decision point |
 | **Output consistency** | Varies per run | Unified structure via templates, multi-language support |
 | **Specialized agents** | General-purpose subagents only | 4 dedicated agents: TDD / PoC / research / summarization |
@@ -149,13 +149,10 @@ app-dev-prompt-suite/                    # Marketplace repository
         │   ├── feasibility-study/
         │   │   ├── SKILL.md
         │   │   ├── report-format.md
-        │   │   ├── details-format.md
         │   │   └── steps/
         │   ├── solution-design/
         │   │   ├── SKILL.md
         │   │   ├── design-format.md
-        │   │   ├── details-format.md
-        │   │   ├── subtask-design-template.md
         │   │   └── steps/
         │   ├── implement-tdd/
         │   │   ├── SKILL.md
@@ -187,15 +184,15 @@ app-dev-prompt-suite/                    # Marketplace repository
 ```
 # Phase 1: Feasibility Study
 /app-dev-suite:feasibility-study
-# → Produces: {docs_dir}/{task_name}/feasibility_report.md
+# → Produces: {docs_dir}/{task_name}/feasibility/feasibility_report.md
 
 # Phase 2: Solution Design
 /app-dev-suite:solution-design
-# → Produces: {docs_dir}/{task_name}/solution_design.md
+# → Produces: {docs_dir}/{task_name}/design/solution_design.md
 
 # Phase 3: Implementation
 /app-dev-suite:implement-tdd
-# → Produces: {docs_dir}/{task_name}/implementation_report.md
+# → Produces: {docs_dir}/{task_name}/implementation/implementation_report.md
 
 # Generate presentation slides from artifacts
 /app-dev-suite:generate-slides

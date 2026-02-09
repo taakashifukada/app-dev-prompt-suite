@@ -25,8 +25,8 @@ flowchart LR
         I1 --> I2 --> I3
     end
 
-    Phase1 -- "feasibility_report.md" --> Phase2
-    Phase2 -- "solution_design.md" --> Phase3
+    Phase1 -- "feasibility/feasibility_report.md" --> Phase2
+    Phase2 -- "design/solution_design.md" --> Phase3
 
     style Phase1 fill:#e8f4fd,stroke:#2196F3
     style Phase2 fill:#fff3e0,stroke:#FF9800
@@ -61,7 +61,7 @@ flowchart TD
     PoC --> Select
     AddResearch --> Select
 
-    Report["4. 最終レポート作成\nfeasibility_report.md\n+ feasibility_details/"]
+    Report["4. 最終レポート作成\nfeasibility/feasibility_report.md"]
     Report --> Complete["5. タスク完了\nprogress.yaml 更新"]
 
     style Start fill:#2196F3,color:#fff
@@ -88,7 +88,7 @@ flowchart TD
 
     DeepInvestigate --> SaveApprove
     subgraph SaveApprove["4. ドキュメント保存 + 承認"]
-        Doc["solution_design.md\n+ solution_details/ 保存"]
+        Doc["design/solution_design.md 保存"]
         Summary["document-summarizer\nで要約表示"]
         Approve2{"最終承認\n(AskUser)"}
         Doc --> Summary --> Approve2
@@ -114,7 +114,7 @@ flowchart TD
     LoopStart -- "あり" --> DetailDesign
 
     subgraph SubtaskLoop["2. サブタスク実装ループ"]
-        DetailDesign["a. 詳細設計\nテストケース定義\n+ テンプレート適用"]
+        DetailDesign["a. 詳細設計\nテストケース定義"]
         DetailDesign --> ApproveDesign{"詳細設計\n承認?"}
         ApproveDesign -- "承認" --> TDD
         ApproveDesign -- "修正" --> DetailDesign

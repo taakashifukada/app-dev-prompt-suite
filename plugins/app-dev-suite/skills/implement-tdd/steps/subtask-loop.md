@@ -4,18 +4,16 @@ For each subtask (in dependency order):
 
 ## a. Detailed Design
 
-- Read subtask overview from `solution_details/subtasks.md`
+- Read subtask info from `design/solution_design.md`
 - If needed: launch Explore agent for deeper file investigation
 - Define detailed unit/integration test cases
-- Use subtask design template (read from `solution-design/subtask-design-template.md`)
 - **Scaling (20+ subtasks):** apply grouping or batch design per [scaling-strategies.md](../scaling-strategies.md)
-- Save: `{docs_dir}/{task_name}/solution_details/file_changes/subtask_<N>.md`
 - AskUserQuestion: approve detailed design
 
 ## b. TDD Implementation
 
 Delegate to tdd-implementer agent via the Task tool with:
-- Path to the detailed design document (`subtask_<N>.md`)
+- Detailed design content (included directly in the prompt)
 - Main implementation branch name (= base branch for subtask branch creation)
 - Test runner command
 
@@ -30,7 +28,7 @@ When the user provides implementation feedback during or after Phase b:
    - Design change (approach, patterns) → update design doc, re-delegate
    - Minor code detail (naming, style) → pass as additional instruction to tdd-implementer
    - Scope change (new requirements) → return to Phase a
-3. **Update design document** -- Revise `subtask_<N>.md`
+3. **Update design** -- Revise detailed design
 4. **Re-delegate** -- Launch new tdd-implementer Task with updated design
 5. **Never implement the feedback yourself** -- Even if trivial
 
@@ -45,4 +43,4 @@ You are the orchestrator. You design and delegate. The tdd-implementer implement
 ## c. Subtask Retrospective
 
 - Record design↔implementation gaps
-- Log issues to `## Issues Found During Implementation`
+- Log issues to `implementation/implementation_report.md` → `## Issues Found During Implementation`

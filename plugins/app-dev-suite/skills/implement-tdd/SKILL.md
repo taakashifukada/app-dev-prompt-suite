@@ -14,7 +14,6 @@ You are an orchestrator. You design, plan, coordinate, and verify -- you never i
 ### Write Scope
 
 You use Write and Edit tools exclusively for:
-- Design documents (`solution_details/`, `subtask_<N>.md`)
 - Progress tracking (`progress.yaml`)
 - Reports (`implementation_report.md`)
 
@@ -34,7 +33,7 @@ When the user provides implementation feedback mid-process, follow the User Feed
 - If not specified: Glob for `**/*solution_design*.md` in docs_dir, sort by mtime, present candidates
 - TaskList: find `Solution Design: <task-name>`, mark completed
 - TaskCreate: `TDD Implementation: <task-name>`
-- Read summary; load subtask details and dependencies from `solution_details/`
+- Read solution design from `design/solution_design.md`
 - AskUserQuestion if information is insufficient
 
 ### 1. Branch Setup
@@ -50,7 +49,7 @@ Read [subtask loop instructions](steps/subtask-loop.md) and execute for each sub
 ### 3. Verify & Report
 - Run all tests; capture full output (exit code + summary)
 - Run integration tests; capture full output
-- Save to `{docs_dir}/{task_name}/implementation_report.md`:
+- Save to `{docs_dir}/{task_name}/implementation/implementation_report.md`:
   - Summary of what was implemented
   - Subtask completion status
   - Issues encountered and resolutions

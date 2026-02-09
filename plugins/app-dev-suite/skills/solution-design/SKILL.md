@@ -22,7 +22,7 @@ Create a detailed solution design for TDD implementation based on the feasibilit
 - TaskCreate: `Solution Design: <task-name>`
 
 ### 1. Analyze
-- Read summary report; load details from `feasibility/` as needed
+- Read feasibility report
 - Organize requirements
 - List major implementation items
 - Define high-level test cases (details deferred to implementation)
@@ -36,12 +36,7 @@ AskUserQuestion: approve / modify
 - Read [subtask breakdown instructions](steps/subtask-breakdown.md) and execute (subtask split + dependency map + Mermaid diagram)
 
 ### 4. Save & Approve
-- Save hierarchical docs:
-  - `{docs_dir}/{task_name}/solution_design.md` — summary (max 100 lines), format per `design-format.md`
-  - `{docs_dir}/{task_name}/solution_details/`:
-    - `test_cases.md` — high-level test cases
-    - `subtasks.md` — subtask details (see `details-format.md`)
-    - `file_changes/` — per-subtask file change details
+- Save `{docs_dir}/{task_name}/design/solution_design.md` — format per `design-format.md`
 - Use document-summarizer agent to summarize and display to user
 - AskUserQuestion: approve / request changes / request additional investigation
   - Changes → update documents and re-display
@@ -53,7 +48,7 @@ AskUserQuestion: approve / modify
 - TaskCreate: `TDD Implementation: <task-name>`
 - Display next phase command:
   ```
-  Next: /app-dev-suite:implement-tdd -s {path-to-solution-design}
+  Next: /app-dev-suite:implement-tdd -s {path-to-design/solution_design.md}
   ```
 - AskUserQuestion: proceed to next phase? (Yes: copy and run the command above / No: run later / Type Anything)
 

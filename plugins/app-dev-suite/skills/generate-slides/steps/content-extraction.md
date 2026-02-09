@@ -29,8 +29,8 @@ If list exceeds 12 lines: delegate to `document-summarizer` agent to condense.
 
 ## Phase-to-Artifact Mapping
 
-| Phase | Summary | Details Directory |
-|-------|---------|-------------------|
-| feasibility | `feasibility_report.md` | `feasibility_details/` |
-| design | `solution_design.md` | `solution_details/` |
-| implementation | `implementation_report.md` | (inline) |
+| Phase | Document |
+|-------|----------|
+| feasibility | `feasibility/feasibility_report.md` |
+| design | `design/solution_design.md` |
+| implementation | `implementation/implementation_report.md` |
