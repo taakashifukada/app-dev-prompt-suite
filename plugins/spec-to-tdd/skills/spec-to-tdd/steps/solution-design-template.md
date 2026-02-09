@@ -11,6 +11,7 @@
 
 ## Investigation Summary
 {Key findings from Phase 1-2:
+- If any concrete investigation target was specified in the requirement, you must clarify the answer/result of it here.
 - Existing patterns/conventions that constrain the solution
 - Reusable modules/functions with file paths
 - Risks or constraints identified}
