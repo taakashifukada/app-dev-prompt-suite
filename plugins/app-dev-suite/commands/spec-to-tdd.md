@@ -7,28 +7,31 @@ Based on the spec in `.claude/claudeRes/scripts/feature_spec.md`, follow the pha
 
 ### Phase 1 — Requirements & Research
 
-1. Analyze the spec. Launch Explore subagent(s) to investigate the current codebase. Clarify ambiguities with the user.
-2. If the spec contains infeasible requirements, propose alternatives.
-3. If web research is needed, delegate to `web-research-agent` with the requirements. Review the report and re-clarify with the user if new questions arise.
+1. Analyze the spec. 
+2. Explore the code base thoroughly: Launch Explore subagents to investigate the current codebase. 
+3. Clarify ambiguities with the user.
+4. If the spec contains infeasible requirements, propose alternatives.
+5. If web research is needed, delegate to `web-research-agent` with the requirements. 
+6. Review the report and re-clarify with the user if new questions arise.
 
 ### Phase 2 — Solution Design
 
-4. Present the implementation approach to the user and get approval.
+1. Present the implementation approach to the user and get approval.
    - If the user requests a PoC, invoke `poc-feasibility-expert` subagent, then present results.
-5. Finalize implementation items. Break them into subtasks and map dependencies using a precedence diagram.
-6. Present the subtask list with the precedence diagram to the user and get approval.
+2. Finalize implementation items. Break them into subtasks and map dependencies using a precedence diagram.
+3. Present the subtask list with the precedence diagram to the user and get approval.
 
 ### Phase 3 — Branch & Design Document
 
-7. Propose a feature branch name and location. Either create it or prompt the user to create it manually, then check out.
-8. Save a design document (requirements, implementation items, subtask list, precedence diagram) as a Markdown file:
+1. Save a design document (requirements, implementation items, subtask list, precedence diagram) as a Markdown file:
    - Path: `.claude/claudeRes/docs/<YY_MM_DD>_solution_design_<name>.md` (create the directory if it does not exist)
    - Submit the document to the user for review and approval. Incorporate any revisions and confirm the final plan.
+2. Propose a feature branch name and location. Either create it or prompt the user to create it manually, then check out.
 
 ### Phase 4 — TDD Implementation
 
-9. Hand off the approved design document to `tdd-implementer` subagent. Execute subtasks in precedence-diagram order via TDD.
-10. Report completion to the user. Save a final report as `.claude/claudeRes/docs/<YY_MM_DD>_dev_final_<name>.md`.
+1. Hand off the approved design document to `tdd-implementer` subagent. Execute subtasks in precedence-diagram order via TDD.
+2. Report completion to the user. Save a final report as `.claude/claudeRes/docs/<YY_MM_DD>_dev_final_<name>.md`.
     - Append a PR description section at the end: **Background**, **Main Changes**, **Notes** — each 3-6 lines, 10 lines max.
 
 ## Rules
