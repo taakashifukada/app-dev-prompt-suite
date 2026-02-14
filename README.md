@@ -39,8 +39,16 @@ Approval gates at every phase, structured decision records
 
 ## Get Started
 
-```bash
-claude plugin add arudita-zzz/enterprise-dev-suite/plugins/enterprise-dev-suite
+In Claude Code:
+
+```
+/plugin marketplace add arudita-zzz/enterprise-dev-suite
+/plugin install enterprise-dev-suite@enterprise-dev-suite
+```
+
+Then start your first workflow:
+```
+/enterprise-dev-suite:feasibility-study
 ```
 
 ---
@@ -71,7 +79,7 @@ flowchart LR
 
 ## 30-Second Quickstart
 
-**1. Start with a feature spec** — describe what you want to build in a markdown file.
+**1. Write a feature spec** at `.claude/claudeRes/scripts/feature_spec.md` — describe what you want to build.
 
 **2. Run the workflow:**
 ```
@@ -83,6 +91,27 @@ flowchart LR
 **3. Review artifacts** — each phase produces a structured document in your docs directory.
 
 That's it. Every decision is recorded, every phase is reviewable.
+
+## Deep Research Quickstart
+
+```
+/enterprise-dev-suite:deep-research "your research topic"
+```
+
+→ Approve the task plan, then wait. The investigation runs fully autonomously.
+
+Feed the results into the development workflow:
+```
+/enterprise-dev-suite:feasibility-study -r {path-to-research_report.md}
+```
+
+## Why Deep Research?
+
+- **Autonomous task decomposition** — breaks your topic into 3-8 investigation tasks automatically
+- **Adaptive re-evaluation** — dynamically revises remaining tasks after each completion
+- **Multiple investigation methods** — web-research, codebase-analysis, comparative, synthesis
+- **Gap analysis & auto-fill** — detects coverage gaps and spawns additional tasks to close them
+- **Fully autonomous after approval** — approve once, get a comprehensive report back
 
 ## Why Not Just Use Plan Mode?
 
