@@ -1,0 +1,8 @@
+{
+  "name": "enterprise-dev-suite",
+  "description": "Enterprise-grade traceable development workflow with deep research, feasibility study, solution design, and TDD implementation",
+  "version": "2.0.0",
+  "author": { "name": "arudita-zzz" },
+  "repository": "https://github.com/arudita-zzz/enterprise-dev-suite",
+  "license": "MIT"
+}

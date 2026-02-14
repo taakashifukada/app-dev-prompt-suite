@@ -1,10 +1,10 @@
-# Contributing to app-dev-prompt-suite
+# Contributing to enterprise-dev-suite
 
 ## How to Contribute
 
 ### Bug Reports & Feature Requests
 
-Open an [Issue](https://github.com/arudita-zzz/app-dev-prompt-suite/issues) with:
+Open an [Issue](https://github.com/arudita-zzz/enterprise-dev-suite/issues) with:
 - Clear description of the problem or idea
 - Steps to reproduce (for bugs)
 - Expected vs actual behavior
@@ -14,7 +14,7 @@ Open an [Issue](https://github.com/arudita-zzz/app-dev-prompt-suite/issues) with
 1. Fork the repository
 2. Create a feature branch from `main`
 3. Make your changes
-4. Test with Claude Code locally: `claude --plugin-dir ./plugins/app-dev-suite`
+4. Test with Claude Code locally: `claude --plugin-dir ./plugins/enterprise-dev-suite`
 5. Submit a PR with a clear description of the changes
 
 ### What to Contribute
@@ -27,7 +27,7 @@ Open an [Issue](https://github.com/arudita-zzz/app-dev-prompt-suite/issues) with
 ## Project Structure
 
 ```
-plugins/app-dev-suite/
+plugins/enterprise-dev-suite/
 ├── skills/           # User-invocable skills (SKILL.md + steps/)
 ├── agents/           # Subagent definitions (.md)
 ├── script/           # Shell scripts

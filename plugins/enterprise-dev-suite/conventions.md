@@ -1,4 +1,4 @@
-# app-dev-suite Conventions
+# enterprise-dev-suite Conventions
 
 ## Defaults
 

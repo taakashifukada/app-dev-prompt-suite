@@ -52,7 +52,7 @@ Read [approach selection instructions](steps/approach-selection.md) and execute.
 - TaskCreate: `Solution Design: <task-name>` as next step
 - Display next phase command:
   ```
-  Next: /app-dev-suite:solution-design -s {path-to-feasibility-report}
+  Next: /enterprise-dev-suite:solution-design -s {path-to-feasibility-report}
   ```
 - AskUserQuestion: proceed to next phase? (Yes: copy and run the command above / No: run later / Type Anything)
 

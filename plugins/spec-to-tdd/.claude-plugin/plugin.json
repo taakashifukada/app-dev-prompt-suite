@@ -1,8 +1,0 @@
-{
-  "name": "spec-to-tdd",
-  "description": "Single unified spec-to-TDD workflow with document output and easy-to-review branching",
-  "version": "1.0.0",
-  "author": { "name": "arudita-zzz" },
-  "repository": "https://github.com/arudita-zzz/app-dev-prompt-suite",
-  "license": "MIT"
-}

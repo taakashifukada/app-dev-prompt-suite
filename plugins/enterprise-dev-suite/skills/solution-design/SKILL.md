@@ -52,7 +52,7 @@ AskUserQuestion: approve / modify
 - TaskCreate: `TDD Implementation: <task-name>`
 - Display next phase command:
   ```
-  Next: /app-dev-suite:implement-tdd -s {path-to-design/solution_design.md}
+  Next: /enterprise-dev-suite:implement-tdd -s {path-to-design/solution_design.md}
   ```
 - AskUserQuestion: proceed to next phase? (Yes: copy and run the command above / No: run later / Type Anything)
 

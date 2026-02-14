@@ -45,7 +45,7 @@ Read [synthesis instructions](steps/synthesis.md) and execute.
 - TaskUpdate: mark completed
 - Display report path: `{docs_dir}/{research_name}/research/research_report.md`
 - AskUserQuestion: proceed to feasibility-study with this research?
-  - Yes → display: `/app-dev-suite:feasibility-study -r {path-to-research_report.md}`
+  - Yes → display: `/enterprise-dev-suite:feasibility-study -r {path-to-research_report.md}`
   - No → end
   - Type Anything
 

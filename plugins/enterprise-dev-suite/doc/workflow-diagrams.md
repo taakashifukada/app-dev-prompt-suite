@@ -1,4 +1,4 @@
-# app-dev-suite Workflow Diagrams
+# enterprise-dev-suite Workflow Diagrams
 
 ## 1. Overview
 

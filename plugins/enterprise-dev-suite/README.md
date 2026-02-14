@@ -1,38 +1,26 @@
-# app-dev-suite
+# enterprise-dev-suite
 
-A Claude Code plugin providing deep research and a three-phase spec-driven development workflow: deep research, feasibility study, solution design, and TDD implementation.
+An enterprise-grade Claude Code plugin providing a traceable, multi-phase development workflow: deep research, feasibility study, solution design, and TDD implementation — with approval gates at every decision point.
 
 ## Installation
 
-### Via Marketplace (Recommended)
-
 ```bash
-# Add marketplace
-/plugin marketplace add arudita-zzz/app-dev-prompt-suite
-
-# Install plugin
-/plugin install app-dev-suite@app-dev-prompt-suite
+claude plugin add arudita-zzz/enterprise-dev-suite/plugins/enterprise-dev-suite
 ```
 
-### From Local Directory
-
-```bash
-claude --plugin-dir ./app-dev-suite-plugin
+After installation, skills are accessible with the `enterprise-dev-suite:` namespace prefix:
 ```
-
-After installation, skills are accessible with the `app-dev-suite:` namespace prefix:
-```
-/app-dev-suite:deep-research        # Optional: autonomous deep research
-/app-dev-suite:feasibility-study    # Phase 1
-/app-dev-suite:solution-design      # Phase 2
-/app-dev-suite:implement-tdd        # Phase 3
-/app-dev-suite:small-feature        # Quick all-in-one
-/app-dev-suite:generate-slides      # Slide generation
+/enterprise-dev-suite:deep-research        # Optional: autonomous deep research
+/enterprise-dev-suite:feasibility-study    # Phase 1
+/enterprise-dev-suite:solution-design      # Phase 2
+/enterprise-dev-suite:implement-tdd        # Phase 3
+/enterprise-dev-suite:small-feature        # Quick all-in-one
+/enterprise-dev-suite:generate-slides      # Slide generation
 ```
 
 ## Overview
 
-app-dev-suite is a structured development workflow plugin for teams that need **process transparency** and **decision traceability** — capabilities that Claude Code's built-in Plan Mode does not provide.
+enterprise-dev-suite is a structured development workflow plugin for teams that need **process transparency**, **decision traceability**, and **audit-ready artifacts** — capabilities that Claude Code's built-in Plan Mode does not provide.
 
 ### Workflow
 
@@ -45,16 +33,16 @@ Each phase produces a structured document that serves as an audit trail and team
 
 ### Design Philosophy
 
-app-dev-suite is built for **spec-driven implementation on enterprise-scale codebases** — where process transparency, correctability at key decision points, and output consistency matter.
+enterprise-dev-suite is built for **traceable, auditable development on enterprise-scale codebases** — where process transparency, correctability at key decision points, and output consistency matter.
 
 - **Process transparency**: Every phase produces structured, reviewable artifacts with decision rationale
 - **Correctability**: User approval at key decision points lets teams course-correct before work compounds
 - **Output consistency**: Templates ensure uniform document structure regardless of session or model variance
 - **Sonnet-optimized**: Workflow and prompts are designed to produce reliable results with Claude Sonnet, keeping Opus optional for deep analysis
 
-### Why app-dev-suite over Plan Mode?
+### Why enterprise-dev-suite over Plan Mode?
 
-| | Plan Mode | app-dev-suite |
+| | Plan Mode | enterprise-dev-suite |
 |---|---|---|
 | **Workflow** | User designs ad-hoc each time | Pre-built 3-phase with user approval gates |
 | **Artifact persistence** | Confined to conversation | File output per phase, resumable across sessions |
@@ -62,36 +50,38 @@ app-dev-suite is built for **spec-driven implementation on enterprise-scale code
 | **Correctability** | None | User approval at every key decision point |
 | **Output consistency** | Varies per run | Unified structure via templates, multi-language support |
 | **Specialized agents** | General-purpose subagents only | 5 dedicated agents + autonomous deep research via Task tool subagents |
+| **Audit trail** | None | Full document chain with citations |
+| **Resumability** | Lost on session end | File artifacts, cross-session |
 
 **Best fit**: Teams working on large codebases where development decisions need to be reviewed by stakeholders — why this design was chosen and what alternatives were considered.
 
-For quick individual tasks, Plan Mode or `/app-dev-suite:small-feature` remains the simpler choice.
+For quick individual tasks, Plan Mode or `/enterprise-dev-suite:small-feature` remains the simpler choice.
 
 ## Quick Start
 
 ### Basic Usage (No Configuration Required)
 
 ```
-/app-dev-suite:deep-research        # Optional: deep research before feasibility
-/app-dev-suite:feasibility-study    # Phase 1
-/app-dev-suite:solution-design      # Phase 2
-/app-dev-suite:implement-tdd        # Phase 3
+/enterprise-dev-suite:deep-research        # Optional: deep research before feasibility
+/enterprise-dev-suite:feasibility-study    # Phase 1
+/enterprise-dev-suite:solution-design      # Phase 2
+/enterprise-dev-suite:implement-tdd        # Phase 3
 ```
 
 ### With Deep Research
 
 ```
-/app-dev-suite:deep-research "MCP server integration patterns"
+/enterprise-dev-suite:deep-research "MCP server integration patterns"
 # → Produces research_report.md
 # Then feed into feasibility study:
-/app-dev-suite:feasibility-study -r {path-to-research_report.md}
+/enterprise-dev-suite:feasibility-study -r {path-to-research_report.md}
 ```
 
 ### Quick Implementation
 
 For smaller tasks that don't need the full three-phase workflow:
 ```
-/app-dev-suite:small-feature
+/enterprise-dev-suite:small-feature
 ```
 
 ## Skills
@@ -117,7 +107,7 @@ For smaller tasks that don't need the full three-phase workflow:
 
 ## Configuration
 
-app-dev-suite works out-of-the-box with sensible defaults defined in [conventions.md](conventions.md).
+enterprise-dev-suite works out-of-the-box with sensible defaults defined in [conventions.md](conventions.md).
 
 To customize defaults (docs directory, feature spec path, language), edit the Defaults table in `conventions.md` directly.
 
@@ -143,7 +133,7 @@ When the table is empty, all skills behave identically to the default (no custom
 
 ## Project-Specific Plugins
 
-app-dev-suite is designed to be generic. For project-specific skills (JIRA integration, architecture documentation, etc.), create a separate plugin:
+enterprise-dev-suite is designed to be generic. For project-specific skills (JIRA integration, architecture documentation, etc.), create a separate plugin:
 
 ```
 my-project-skills/
@@ -161,11 +151,11 @@ Install both plugins to combine generic workflow with project-specific capabilit
 ## File Structure
 
 ```
-app-dev-prompt-suite/                    # Marketplace repository
+enterprise-dev-suite/                    # Marketplace repository
 ├── .claude-plugin/
 │   └── marketplace.json                 # Marketplace catalog
 └── plugins/
-    └── app-dev-suite/                    # Plugin
+    └── enterprise-dev-suite/                    # Plugin
         ├── .claude-plugin/
         │   └── plugin.json
         ├── skills/
@@ -211,23 +201,23 @@ app-dev-prompt-suite/                    # Marketplace repository
 
 ```
 # Optional: Deep Research
-/app-dev-suite:deep-research "research topic"
+/enterprise-dev-suite:deep-research "research topic"
 # → Produces: {docs_dir}/{research_name}/research/research_report.md
 
 # Phase 1: Feasibility Study (with or without prior research)
-/app-dev-suite:feasibility-study
-/app-dev-suite:feasibility-study -r {path-to-research_report.md}
+/enterprise-dev-suite:feasibility-study
+/enterprise-dev-suite:feasibility-study -r {path-to-research_report.md}
 # → Produces: {docs_dir}/{task_name}/feasibility/feasibility_report.md
 
 # Phase 2: Solution Design
-/app-dev-suite:solution-design
+/enterprise-dev-suite:solution-design
 # → Produces: {docs_dir}/{task_name}/design/solution_design.md
 
 # Phase 3: Implementation
-/app-dev-suite:implement-tdd
+/enterprise-dev-suite:implement-tdd
 # → Produces: {docs_dir}/{task_name}/implementation/implementation_report.md
 
 # Generate presentation slides from artifacts
-/app-dev-suite:generate-slides
+/enterprise-dev-suite:generate-slides
 # → Produces: {docs_dir}/{task_name}/slides_{task_name}.md
 ```
