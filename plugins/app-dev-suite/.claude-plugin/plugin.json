@@ -1,7 +1,7 @@
 {
   "name": "app-dev-suite",
   "description": "Spec-driven development workflow with deep research, feasibility study, solution design, and TDD implementation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": { "name": "taakashifukada" },
   "repository": "https://github.com/taakashifukada/app-dev-prompt-suite",
   "license": "MIT"
