@@ -7,7 +7,7 @@ A Claude Code plugin providing a unified single-skill workflow from feature spec
 ### Via Marketplace (Recommended)
 
 ```bash
-claude plugin add taakashifukada/app-dev-prompt-suite/plugins/spec-to-tdd
+claude plugin add arudita/app-dev-prompt-suite/plugins/spec-to-tdd
 ```
 
 ### From Local Directory

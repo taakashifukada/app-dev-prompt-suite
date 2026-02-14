@@ -44,7 +44,7 @@ For quick tasks: `/app-dev-suite:small-feature` provides an all-in-one workflow.
 ## Install (One Command)
 
 ```bash
-claude plugin add taakashifukada/app-dev-prompt-suite/plugins/app-dev-suite
+claude plugin add arudita/app-dev-prompt-suite/plugins/app-dev-suite
 ```
 
 Then use the skills:

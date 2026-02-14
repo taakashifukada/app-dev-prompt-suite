@@ -2,7 +2,7 @@
   "name": "spec-to-tdd",
   "description": "Single unified spec-to-TDD workflow with document output and easy-to-review branching",
   "version": "1.0.0",
-  "author": { "name": "taakashifukada" },
-  "repository": "https://github.com/taakashifukada/app-dev-prompt-suite",
+  "author": { "name": "arudita" },
+  "repository": "https://github.com/arudita/app-dev-prompt-suite",
   "license": "MIT"
 }

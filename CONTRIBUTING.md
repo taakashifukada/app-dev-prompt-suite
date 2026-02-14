@@ -4,7 +4,7 @@
 
 ### Bug Reports & Feature Requests
 
-Open an [Issue](https://github.com/taakashifukada/app-dev-prompt-suite/issues) with:
+Open an [Issue](https://github.com/arudita/app-dev-prompt-suite/issues) with:
 - Clear description of the problem or idea
 - Steps to reproduce (for bugs)
 - Expected vs actual behavior

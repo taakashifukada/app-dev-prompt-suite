@@ -8,7 +8,7 @@ A Claude Code plugin providing deep research and a three-phase spec-driven devel
 
 ```bash
 # Add marketplace
-/plugin marketplace add taakashifukada/app-dev-prompt-suite
+/plugin marketplace add arudita/app-dev-prompt-suite
 
 # Install plugin
 /plugin install app-dev-suite@app-dev-prompt-suite
