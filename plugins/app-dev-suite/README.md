@@ -61,7 +61,7 @@ app-dev-suite is built for **spec-driven implementation on enterprise-scale code
 | **Decision records** | Not retained unless explicitly instructed | Built into workflow via feasibility report |
 | **Correctability** | None | User approval at every key decision point |
 | **Output consistency** | Varies per run | Unified structure via templates, multi-language support |
-| **Specialized agents** | General-purpose subagents only | 4 dedicated agents + headless deep research via `claude -p` |
+| **Specialized agents** | General-purpose subagents only | 4 dedicated agents + autonomous deep research via Task tool subagents |
 
 **Best fit**: Teams working on large codebases where development decisions need to be reviewed by stakeholders — why this design was chosen and what alternatives were considered.
 
@@ -154,9 +154,7 @@ app-dev-prompt-suite/                    # Marketplace repository
         │   │   ├── adaptation-prompt.md
         │   │   ├── task-result-format.md
         │   │   ├── report-format.md
-        │   │   ├── steps/
-        │   │   └── script/
-        │   │       └── run-deep-research.sh
+        │   │   └── steps/
         │   ├── feasibility-study/
         │   │   ├── SKILL.md
         │   │   ├── report-format.md

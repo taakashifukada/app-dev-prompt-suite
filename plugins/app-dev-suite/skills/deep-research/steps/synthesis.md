@@ -19,20 +19,22 @@ For each research dimension:
 ### 3. Fill Coverage Gaps
 If critical gaps exist:
 - Create ad-hoc task definitions for gap-filling
-- Execute them via `claude -p` with the same investigator-prompt.md pattern:
+- For each gap task, launch a Task tool subagent (`subagent_type: general-purpose`) with the same investigator-prompt.md pattern:
   ```
-  claude -p "{investigator_prompt}
+  {investigator-prompt.md contents}
+
   ## Research Context
-  {research_context}
+  {research_context.md contents}
+
   ## Your Task
   {gap_task_definition}
+
   ## Prior Investigation Findings
-  {accumulated_findings}
+  {accumulated_findings.md contents}
+
   ## Output
-  - Full result: {result_path}
-  - Key findings only: {key_findings_path}" \
-    --allowedTools "Read" "Write(.claude/claudeRes/*)" "WebSearch" "WebFetch" "Grep" "Glob" \
-    --max-turns 25
+  - Full result: {absolute path to result file}
+  - Key findings only: {absolute path to key findings file}
   ```
 - Append new key findings to accumulated_findings.md
 

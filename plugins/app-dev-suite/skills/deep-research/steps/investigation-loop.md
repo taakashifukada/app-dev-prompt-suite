@@ -1,29 +1,73 @@
 # Investigation Loop
 
-Execute the investigation script and monitor progress.
+Execute investigation tasks serially via Task tool subagents with adaptive re-evaluation after each task.
 
 ## Procedure
 
-### 1. Launch Script
+Re-read `task_order.txt` at the start of each iteration to pick up adaptation changes.
 
-Run `script/run-deep-research.sh` via Bash with `run_in_background: true`:
+For each `task_id` in `task_order.txt`:
+
+### 1. Skip Completed
+
+If `tasks/{task_id}_result.md` already exists, skip to the next task.
+
+### 2. Investigate
+
+Launch a Task tool subagent (`subagent_type: general-purpose`) with the following prompt assembled by reading each file:
 
 ```
-bash {skill_dir}/script/run-deep-research.sh "{research_dir}" "{skill_dir}"
+{investigator-prompt.md contents}
+
+## Research Context
+{research_context.md contents}
+
+## Your Task
+{tasks/{task_id}_definition.md contents}
+
+## Prior Investigation Findings
+{accumulated_findings.md contents}
+
+## Output
+- Full result: {absolute path to tasks/{task_id}_result.md}
+- Key findings only: {absolute path to tasks/{task_id}_key_findings.md}
 ```
 
-Where:
-- `{research_dir}`: the output directory containing task_order.txt and tasks/
-- `{skill_dir}`: path to `skills/deep-research/` (contains investigator-prompt.md, adaptation-prompt.md)
+### 3. Accumulate Findings
 
-### 2. Wait for Completion
+After the subagent completes:
+1. If `tasks/{task_id}_result.md` does not exist, log a warning and continue to next task
+2. Read `tasks/{task_id}_key_findings.md`
+3. Append to `accumulated_findings.md` with a `### {task_id}` header using the Write tool
 
-Use TaskOutput to wait for the background script to complete.
+### 4. Adapt Remaining Tasks
 
-### 3. Verify Results
+Count remaining incomplete tasks (no `_result.md` file). If none remain, exit the loop.
 
-After completion:
-1. Read `progress.log` — confirm `ALL_COMPLETE` is present
-2. Count result files in `tasks/` vs expected task count
-3. Read `adaptation_log.md` if it exists — note any plan changes
-4. If any tasks show `WARN no result`, report to user during synthesis
+Otherwise, launch a Task tool subagent (`subagent_type: general-purpose`) with:
+
+```
+{adaptation-prompt.md contents}
+
+## Research Context
+{research_context.md contents}
+
+## Accumulated Findings
+{accumulated_findings.md contents}
+
+## Remaining Tasks
+{concatenated contents of each remaining {task_id}_definition.md, separated by ---}
+
+## Writable Files
+- Task definitions: {absolute path to tasks/}
+- Task order: {absolute path to task_order.txt}
+- Adaptation log: {absolute path to adaptation_log.md}
+```
+
+### 5. Loop
+
+Return to the top of the loop (re-read `task_order.txt`).
+
+## Completion
+
+When all tasks in `task_order.txt` have `_result.md` files, the loop ends.

@@ -2,10 +2,10 @@
 name: deep-research
 description: Break down a complex research topic into investigation tasks, execute them autonomously with adaptive re-evaluation, and produce a comprehensive report.
 argument-hint: [research topic or question]
-allowed-tools: Read, Grep, Glob, Write(.claude/claudeRes/*), Bash
+allowed-tools: Read, Grep, Glob, Write(.claude/claudeRes/*), Task
 ---
 
-You are a research orchestrator. You decompose complex research topics into focused investigation tasks, execute them serially via headless `claude -p` instances, adaptively refine the plan after each task, and synthesize findings into a comprehensive report.
+You are a research orchestrator. You decompose complex research topics into focused investigation tasks, execute them serially via Task tool subagents, adaptively refine the plan after each task, and synthesize findings into a comprehensive report.
 
 ## Steps
 
@@ -25,8 +25,6 @@ Read [task decomposition instructions](steps/task-decomposition.md) and execute.
 ### 2. Investigation Loop
 
 Read [investigation loop instructions](steps/investigation-loop.md) and execute.
-
-The skill directory path for the script is `plugins/app-dev-suite/skills/deep-research` (relative to project root where this plugin is installed).
 
 ### 3. Synthesis
 
