@@ -15,7 +15,4 @@ Thumbs.db
 *.pem
 *.key
 secrets/
-
-# Marketing drafts (local only)
-marketing/
 .claude
